@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WSDATAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attendees">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="int" />
+          <Property Name="Bio" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="Company" Type="varchar" MaxLength="1000" />
+          <Property Name="AvatarUrl" Type="varchar" MaxLength="1000" />
+          <Property Name="MediumImage" Type="varchar" MaxLength="1000" />
+          <Property Name="Career" Type="varchar" MaxLength="1000" />
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Attendees2016">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="int" />
+          <Property Name="Bio" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="Company" Type="varchar" MaxLength="1000" />
+          <Property Name="AvatarUrl" Type="varchar" MaxLength="1000" />
+          <Property Name="MediumImage" Type="varchar" MaxLength="1000" />
+          <Property Name="Career" Type="varchar" MaxLength="1000" />
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Startups">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="int" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="brandisty_url" Type="varchar" MaxLength="1000" />
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="City" Type="varchar" MaxLength="1000" />
+          <Property Name="Company" Type="varchar" MaxLength="1000" />
+          <Property Name="Pitch" Type="varchar" MaxLength="1000" />
+          <Property Name="MediumImage" Type="varchar" MaxLength="1000" />
+          <Property Name="Industry" Type="varchar" MaxLength="1000" />
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="1000" />
+          <Property Name="Track" Type="varchar" MaxLength="1000" />
+          <Property Name="WebSite" Type="varchar" MaxLength="1000" />
+          <Property Name="PastConference" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityContainer Name="WSDATAModelStoreContainer">
+          <EntitySet Name="Attendees" EntityType="Self.Attendees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attendees2016" EntityType="Self.Attendees2016" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Startups" EntityType="Self.Startups" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WSDATAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attendee">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="Int32" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AvatarUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MediumImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Career" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="WSDATAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attendees" EntityType="Self.Attendee" />
+          <EntitySet Name="Startups" EntityType="WSDATAModel.Startup" />
+          <EntitySet Name="Attendees2016" EntityType="WSDATAModel.Attendees2016" />
+        </EntityContainer>
+        <EntityType Name="Startup">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="brandisty_url" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Pitch" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MediumImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Track" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PastConference" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Attendees2016">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="Int32" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AvatarUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MediumImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Career" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WSDATAModelStoreContainer" CdmEntityContainer="WSDATAEntities">
+          <EntitySetMapping Name="Attendees">
+            <EntityTypeMapping TypeName="WSDATAModel.Attendee">
+              <MappingFragment StoreEntitySet="Attendees">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="AvatarUrl" ColumnName="AvatarUrl" />
+                <ScalarProperty Name="MediumImage" ColumnName="MediumImage" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Startups">
+            <EntityTypeMapping TypeName="WSDATAModel.Startup">
+              <MappingFragment StoreEntitySet="Startups">
+                <ScalarProperty Name="PastConference" ColumnName="PastConference" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="MediumImage" ColumnName="MediumImage" />
+                <ScalarProperty Name="Pitch" ColumnName="Pitch" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="brandisty_url" ColumnName="brandisty_url" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attendees2016">
+            <EntityTypeMapping TypeName="WSDATAModel.Attendees2016">
+              <MappingFragment StoreEntitySet="Attendees2016">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+                <ScalarProperty Name="MediumImage" ColumnName="MediumImage" />
+                <ScalarProperty Name="AvatarUrl" ColumnName="AvatarUrl" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
