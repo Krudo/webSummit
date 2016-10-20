@@ -28,5 +28,7 @@ namespace webSummit
         public virtual DbSet<Attendee> Attendees { get; set; }
         public virtual DbSet<Startup> Startups { get; set; }
         public virtual DbSet<Attendees2016> Attendees2016 { get; set; }
+        public virtual DbSet<Attendees2015> Attendees2015 { get; set; }
+        public virtual DbSet<UserPic> UserPics { get; set; }
     }
 }

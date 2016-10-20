@@ -53,7 +53,10 @@ namespace webSummit
 
         private void button1_Click(object sender, EventArgs e)
         {
+            RetriveSaveImages();
 
+            /*
+             * Change to image by id
             DirectoryInfo d = new DirectoryInfo(@"C:\Attendees_IMAGES");
             FileInfo[] infos = d.GetFiles();
             int i = 1;
@@ -63,6 +66,7 @@ namespace webSummit
                 File.Move(f.FullName, @"C:\Attendees_IMAGES\Yaron\" + i.ToString() + ".jpg");
                 i++;
             }
+            */
 
             //for (int i = 1; i < 434; i++)
             //{
@@ -162,6 +166,28 @@ namespace webSummit
 
             //}
 
+
+        }
+
+
+        private void RetriveSaveImages()
+        {
+            using (var ctx = new WSDATAEntities())
+            {
+                var users = ctx.UserPics.ToList();
+                string startupUrlImg = "";
+                string fileName = "";
+
+                WebClient webClient = null;
+                foreach (var user in users)
+                {
+                    webClient = new WebClient();
+                    startupUrlImg = user.pic_url;
+                    fileName = @"c:\\Attendees_IMAGES\WS\" + user.user_id.ToString() + ".jpg";
+                    webClient.DownloadFile(startupUrlImg, fileName);
+                }
+
+            }
 
         }
     }

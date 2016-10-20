@@ -8,6 +8,8 @@
         <EntityTypeShape EntityType="WSDATAModel.Attendee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WSDATAModel.Startup" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="WSDATAModel.Attendees2016" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="WSDATAModel.Attendees2015" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WSDATAModel.UserPic" Width="1.5" PointX="5.875" PointY="4.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
